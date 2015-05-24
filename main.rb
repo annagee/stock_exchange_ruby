@@ -1,4 +1,9 @@
-require_relative 'bokerage'
+
+require 'pry'
+
+
+
+require_relative 'brokerage'
 require_relative 'client'
 require_relative 'portfolio'
 require_relative 'stock'
@@ -18,3 +23,7 @@ def menu
   print "--> "
   gets.chomp.downcase
 end
+
+menu
+
+binding.pry
