@@ -7,7 +7,6 @@ class Client
     @name = options[:name]
     @balance = options[:balance] 
     @portfolios = []
-  
   end
 
 end    

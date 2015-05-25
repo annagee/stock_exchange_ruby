@@ -1,10 +1,11 @@
 class Portfolio
+
   attr_accessor :portfolio_name, :stocks, :num_of_stocks
 
-  def initialize
+  def initialize (options = {})
     @portfolio_name = options[:portfolio_name]
-    @stocks = options[:stocks]
-    @num_of_stocks = options[:num_of_stocks]
+    @stock_name = options[:stock_name]
+    @num_of_stocks = {}
   end
 
 end  

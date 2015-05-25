@@ -10,7 +10,7 @@ brokerage = Brokerage.new({
   address: '23 Finsbury Square, London, EC1'
   })
   
-  portfolio = []
+  portfolios = []
 
   # client1 = Client.new({
   #   name:'Suzy Brown',
@@ -71,19 +71,25 @@ answer = menu
     portfolio = Portfolio.new({
       portfolio_name: portfolio_name,
       stocks: stocks,
-      num_of_stocks: num_of_stocks
       })
-    brokerage.client.portfolio_name = portfolio
+   portfolios.push(portfolio)
+    puts "#{portfolio.portfolio_name} has been created"
 
   when '3' 
-    puts "What is your name?"
-    gets.chomp
+    # puts "What is your name?"
+    # gets.chomp
     puts "Which portfolio do you wish to buy shares for?"
-    gets.chomp
+    portfolio = gets.chomp
     puts "What stock would you like to purchase?"
-    gets.chomp
-    puts "Stock price is xxx. Please confirm how many shares you wish to buy."
-    gets.chomp
+    stock_name = gets.chomp
+    # puts "Stock price is xxx. Please confirm how many shares you wish to buy."
+    puts "How much stock would you like to purchase?"
+    num_of_shares =gets.chomp.to_f
+    stock = Stock.new ({stock_name: stock_name, num_of_shares: num_of_shares})
+    brokerage.client.portfolio(stock.stock_name).to a
+
+    puts "Confirming that you are happy to purchase #{stock_name.name} for #{num_of_share}?(y)es or (n)o"
+    gets.chomp == y
   when '4' 
     puts "What is your name?"
     gets.chomp

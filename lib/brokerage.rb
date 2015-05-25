@@ -12,7 +12,8 @@ class Brokerage
     @client.puts(client)
   end  
 
-  def adding_stock_to_portfolio
+  def adding_stock
+    adding_stock 
 
   end
 
